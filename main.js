@@ -30,12 +30,51 @@ for (let i = 0; i < board.length; i++) {
         }
     })
 }
+
+
 function check_winner() {
-    for (let i = 0; i < total_rows; i++) {
-        if ( (board[ways_to_win[i][0]].textContent != '') &&
-             (board[ways_to_win[i][0]].textContent == board[ways_to_win[i][1]].textContent) &&
-             (board[ways_to_win[i][1]].textContent == board[ways_to_win[i][2]].textContent) ) {
-                console.log(board[ways_to_win[i][0]].textContent + ' wins');
-             }
+    var win = false;
+    var playerSelections = new Array();
+
+    if (currentPlayer == 0)
+        playerSelections = player1;
+    else
+	playerSelections = player2;
+    
+    if (playerSelections.length >= size) {
+       
+        // check if any 'winners' are also in your selections 
+        for (i = 0; i < winners.length; i++) {
+            var sets = winners[i];  // winning hand
+            var setFound = true;
+            
+            for (r = 0; r < sets.length; r++) {
+                // check if number is in current players hand
+                // if not, break, not winner
+                var found = false;
+                
+                // players hand
+                for (s = 0; s < playerSelections.length; s++) {
+                    if (sets[r] == playerSelections[s]) {
+                        found = true;
+                        break;
+                    }
+                }
+
+                // value not found in players hand
+                // not a valid set, move on
+                if (found == false) {
+                    setFound = false;
+                    break;
+                }
+            }
+
+            if (setFound == true) {
+                win = true;
+                break;
+            }
+        }
     }
+
+    return win;
 };
