@@ -75,7 +75,6 @@ const check_for_winner = () => {
   }
 };
 
-
 const render_board = () => {
   board_container.innerHTML = ""
   board.forEach((e, i) => {
