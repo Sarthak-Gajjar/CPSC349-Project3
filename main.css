@@ -1,15 +1,12 @@
-* {
+
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    color:white;
+    color: white;
   }
-
-  h1 {
-    padding-bottom: 0.5in;
-  }
-
+  
   .container {
     min-height: 100vh;
     display: flex;
@@ -18,30 +15,26 @@
     justify-content: center;
     background: rgb(44, 44, 44);
   }
-
-  .reset {
-    outline: none;
-    margin-top: 0.5in;
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    background: rgb(70, 69, 69);
-    transition: all 0.2s ease-in-out;
+  
+  h1 {
+    font-size: 5rem;
+    margin-bottom: 0.5em;
   }
   
-  .reset:hover {
-    cursor: pointer;
-    background: gray;
-    color: white;
+  h2 {
+    margin-top: 1em;
+    font-size: 2rem;
+    margin-bottom: 0.5em;
   }
-
+  
   .game_area {
     display: grid;
     width: 300px;
     height: 300px;
     grid-template-columns: auto auto auto;
   }
-  .tile {
+  
+  .block {
     display: flex;
     width: 100px;
     height: 100px;
@@ -53,35 +46,83 @@
     transition: background 0.2s ease-in-out;
   }
   
-  .tile:hover {
+  .block:hover {
     cursor: pointer;
     background: rgb(51, 51, 51);
   }
-
+  
   .occupied:hover {
     background: #ff3a3a;
   }
-
-  #tile_0,
-  #tile_1,
-  #tile_2 {
+  
+  .win {
+    background: #0ff30f;
+  }
+  
+  .win:hover {
+    background: #0ff30f;
+  }
+  
+  #block_0,
+  #block_1,
+  #block_2 {
     border-top: none;
   }
   
-  #tile_0,
-  #tile_3,
-  #tile_6 {
+  #block_0,
+  #block_3,
+  #block_6 {
     border-left: none;
   }
   
-  #tile_6,
-  #tile_7,
-  #tile_8 {
+  #block_6,
+  #block_7,
+  #block_8 {
     border-bottom: none;
   }
   
-  #tile_2,
-  #tile_5,
-  #tile_8 {
+  #block_2,
+  #block_5,
+  #block_8 {
     border-right: none;
+  }
+  
+  button {
+    outline: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    background: rgb(70, 69, 69);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  button:hover {
+    cursor: pointer;
+    background: gray;
+    color: white;
+  }
+  
+  .playerWin {
+    color: green;
+  }
+  
+  .computerWin {
+    color: red;
+  }
+  
+  .draw {
+    color: orangered;
+  }
+  
+  @media only screen and (max-width: 600px) {
+  
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5em;
+    }
+  
+    h2 {
+      margin-top: 1em;
+      font-size: 1.3rem;
+    }
   }
