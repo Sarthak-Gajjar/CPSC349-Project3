@@ -70,7 +70,7 @@ const check_for_winner = () => {
     winner.classList.add("computerWin");
     complete_board = true
   } else if (complete_board) {
-    winner.innerText = "Tie!";
+    winner.innerText = "Draw!";
     winner.classList.add("draw");
   }
 };
